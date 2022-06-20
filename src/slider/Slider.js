@@ -42,6 +42,15 @@ export default function Slider() {
             <button className="btn-slide-next" onClick={nextSlide} >
                 <img src={rightArrow} alt="button" className='btn-slide-img' />
             </button>
+              <div className="container-dots">
+                     {Array.from({ length: 5 }).map((item, index) => (
+                       <div
+                         onClick={() => moveDot(index + 1)}
+                         className={slideIndex === index + 1 ? "dot active" : "dot"}
+                        ></div>
+                      ))}
+      
+             </div>
         </div>
 
     )
